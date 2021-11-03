@@ -1,9 +1,10 @@
 {
   "name": "ordersystem",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "group project using express and mongodb",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/Sofia-bnk/ordersystem#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
