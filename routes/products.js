@@ -24,11 +24,7 @@ router.get('/:productId', async (req, res) => {
 
 //SUBMITS A PRODUCT
 router.post('/', async (req, res) => {
-  const product = new Product({
-    name: req.body.name,
-    cost: req.body.cost,
-    amount: req.body.amount
-  })
+  const product = new Product(req.body)
 
   try {
     const savedProduct = await product.save()
@@ -45,19 +41,6 @@ router.delete('/:productId', async (req, res) => {
       _id: req.params.productId
     })
     res.json(removedProduct)
-  } catch (err) {
-    res.json({ message: err })
-  }
-})
-
-//UPDATE A PRODUCT
-router.patch('/:productId', async (req, res) => {
-  try {
-    const updatedProduct = await Product.updateOne(
-      { _id: req.params.productId },
-      { $set: { name: req.body.name } }
-    )
-    res.json(updatedProduct)
   } catch (err) {
     res.json({ message: err })
   }

@@ -13,10 +13,12 @@ app.use(
 //IMPORT ROUTES
 const usersRoute = require('./routes/users')
 const productsRoute = require('./routes/products')
+const ordersRoute = require('./routes/orders')
 
 //USE MIDDELWARE
 app.use('/users', usersRoute)
 app.use('/products', productsRoute)
+app.use('/orders', ordersRoute)
 
 //ROUTES
 app.get('/', (req, res) => {
